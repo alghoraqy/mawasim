@@ -39,8 +39,8 @@ class RegisterScreen extends StatelessWidget {
                     'مرحبا بـك !',
                     style: AppTextStyle.head1,
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: rhight(context) / 80,
                   ),
                   Text(
                     'إنشاء حساب لبدأ التطبيق',
@@ -50,8 +50,8 @@ class RegisterScreen extends StatelessWidget {
                     height: rhight(context) / 20,
                   ),
                   const DashedRow(text: ' تسجيل جديد'),
-                   SizedBox(
-                    height: rhight(context)/40,
+                  SizedBox(
+                    height: rhight(context) / 40,
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: rwidth(context) / 15),
@@ -66,8 +66,8 @@ class RegisterScreen extends StatelessWidget {
                             controller: cubit.nameController,
                             errorText: 'لابد من ادخال الإسم',
                           ),
-                          const SizedBox(
-                            height: 8,
+                          SizedBox(
+                            height: rhight(context) / 100,
                           ),
                           MyFormField(
                             hint: 'رقم الجوال',
@@ -76,8 +76,8 @@ class RegisterScreen extends StatelessWidget {
                             controller: cubit.phoneController,
                             errorText: 'لابد من ادخال رقم الجوال',
                           ),
-                          const SizedBox(
-                            height: 8,
+                          SizedBox(
+                            height: rhight(context) / 100,
                           ),
                           MyFormField(
                             hint: 'البريد الإلكتروني',
@@ -86,8 +86,8 @@ class RegisterScreen extends StatelessWidget {
                             controller: cubit.emailController,
                             errorText: 'لابد من ادخال البريد الالكتروني',
                           ),
-                          const SizedBox(
-                            height: 8,
+                          SizedBox(
+                            height: rhight(context) / 100,
                           ),
                           MyFormField(
                             hint: 'كلمة المرور',
@@ -97,8 +97,8 @@ class RegisterScreen extends StatelessWidget {
                             controller: cubit.passwordController,
                             errorText: 'لابد من ادخال كلمة المرور',
                           ),
-                          const SizedBox(
-                            height: 8,
+                          SizedBox(
+                            height: rhight(context) / 100,
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(
@@ -139,8 +139,8 @@ class RegisterScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: rhight(context) / 45,
                           ),
                           MyButton(
                               widget: states is RegisterLoading
@@ -167,8 +167,8 @@ class RegisterScreen extends StatelessWidget {
                                 }
                               },
                               width: rwidth(context) / 2.3),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: rhight(context) / 55,
                           ),
                           MyTextButton(
                               text: 'لدي حساب بالفعل',

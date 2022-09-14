@@ -54,8 +54,8 @@ class LoginScreen extends StatelessWidget {
                       textDirection: TextDirection.ltr,
                       style: AppTextStyle.head1,
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: rhight(context) / 45,
                     ),
                     Text(
                       'تسجيل الدخول للمتابعة',
@@ -65,8 +65,8 @@ class LoginScreen extends StatelessWidget {
                       height: rhight(context) / 9,
                     ),
                     const DashedRow(text: 'تسجيل الدخول'),
-                    const SizedBox(
-                      height: 15,
+                    SizedBox(
+                      height: rhight(context) / 60,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: rwidth(context) / 15),
@@ -81,8 +81,8 @@ class LoginScreen extends StatelessWidget {
                               controller: cubit.emailController,
                               errorText: 'برجاء إدخال البريد الإلكتروني',
                             ),
-                            const SizedBox(
-                              height: 15,
+                            SizedBox(
+                              height: rhight(context) / 60,
                             ),
                             MyFormField(
                               hint: 'كلمة المرور',
@@ -92,8 +92,8 @@ class LoginScreen extends StatelessWidget {
                               controller: cubit.passwordController,
                               errorText: 'برجاءإدخال  كلمة المرور',
                             ),
-                            const SizedBox(
-                              height: 10,
+                            SizedBox(
+                              height: rhight(context) / 70,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -113,8 +113,8 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 13,
+                    SizedBox(
+                      height: rhight(context) / 70,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: rwidth(context) / 16),
@@ -141,8 +141,8 @@ class LoginScreen extends StatelessWidget {
                             width: rwidth(context) / 2.3),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: rhight(context) / 80,
                     ),
                     MyTextButton(
                         text: 'ليس لدي حساب',
