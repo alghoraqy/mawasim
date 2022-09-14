@@ -50,8 +50,8 @@ class RegisterScreen extends StatelessWidget {
                     height: rhight(context) / 20,
                   ),
                   const DashedRow(text: ' تسجيل جديد'),
-                  const SizedBox(
-                    height: 15,
+                   SizedBox(
+                    height: rhight(context)/40,
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: rwidth(context) / 15),
