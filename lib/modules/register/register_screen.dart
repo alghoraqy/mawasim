@@ -100,14 +100,6 @@ class RegisterScreen extends StatelessWidget {
                           const SizedBox(
                             height: 8,
                           ),
-                          // MyFormField(
-                          //   hint: 'تأكيد كلمة المرور',
-                          //   iconRoute: 'assets/icons/padlock (1).png',
-                          //   inputType: TextInputType.visiblePassword,
-                          //   isSecure: true,
-                          //   controller: cubit.confirmPasswordController,
-                          //   errorText: 'لابد من ادخال تأكيد كلمة المرور',
-                          // ),
                           Container(
                             margin: EdgeInsets.symmetric(
                                 horizontal: rwidth(context) / 30),
@@ -130,9 +122,8 @@ class RegisterScreen extends StatelessWidget {
                                 contentPadding: const EdgeInsets.all(10),
                                 prefixIconConstraints: const BoxConstraints(
                                     minWidth: 18, minHeight: 18),
-                                prefixIcon: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
+                                prefixIcon: const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
                                   child: Image(
                                     image: AssetImage(
                                         'assets/icons/padlock (1).png'),
