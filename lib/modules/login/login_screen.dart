@@ -42,126 +42,128 @@ class LoginScreen extends StatelessWidget {
         },
         builder: (context, state) {
           LoginCubit cubit = LoginCubit.get(context);
-          return Scaffold(
-            body: Layout(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '! مرحبا بعودتك',
-                      textDirection: TextDirection.ltr,
-                      style: AppTextStyle.head1,
-                    ),
-                    SizedBox(
-                      height: rhight(context) / 45,
-                    ),
-                    Text(
-                      'تسجيل الدخول للمتابعة',
-                      style: AppTextStyle.head2,
-                    ),
-                    SizedBox(
-                      height: rhight(context) / 9,
-                    ),
-                    const DashedRow(text: 'تسجيل الدخول'),
-                    SizedBox(
-                      height: rhight(context) / 60,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: rwidth(context) / 15),
-                      child: Form(
-                        key: cubit.loginformKey,
-                        child: Column(
-                          children: [
-                            MyFormField(
-                              hint: 'البريد الإلكتروني',
-                              iconRoute: 'assets/icons/mail (11).png',
-                              inputType: TextInputType.emailAddress,
-                              controller: cubit.emailController,
-                              errorText: 'برجاء إدخال البريد الإلكتروني',
-                            ),
-                            SizedBox(
-                              height: rhight(context) / 60,
-                            ),
-                            MyFormField(
-                              hint: 'كلمة المرور',
-                              iconRoute: 'assets/icons/padlock (1).png',
-                              inputType: TextInputType.visiblePassword,
-                              isSecure: true,
-                              controller: cubit.passwordController,
-                              errorText: 'برجاءإدخال  كلمة المرور',
-                            ),
-                            SizedBox(
-                              height: rhight(context) / 70,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                TextButton(
-                                    onPressed: () {
-                                      navigateTo(context,
-                                          const ForgetPasswordScreen());
-                                    },
-                                    child: Text(
-                                      'نسيت كلمة المرور ؟',
-                                      style: AppTextStyle.smallText,
-                                    )),
-                              ],
-                            ),
-                          ],
+          return Container(
+            height: rhight(context),
+            width: rwidth(context),
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
+                    image: AssetImage('assets/images/Group 3125.png'),
+                    alignment: Alignment(-1, 1.03))),
+            child: Scaffold(
+              backgroundColor: Colors.transparent,
+              body: Layout(
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '! مرحبا بعودتك',
+                        textDirection: TextDirection.ltr,
+                        style: AppTextStyle.head1,
+                      ),
+                      SizedBox(
+                        height: rhight(context) / 45,
+                      ),
+                      Text(
+                        'تسجيل الدخول للمتابعة',
+                        style: AppTextStyle.head2,
+                      ),
+                      SizedBox(
+                        height: rhight(context) / 9,
+                      ),
+                      const DashedRow(text: 'تسجيل الدخول'),
+                      SizedBox(
+                        height: rhight(context) / 60,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: rwidth(context) / 15),
+                        child: Form(
+                          key: cubit.loginformKey,
+                          child: Column(
+                            children: [
+                              MyFormField(
+                                hint: 'البريد الإلكتروني',
+                                iconRoute: 'assets/icons/mail (11).png',
+                                inputType: TextInputType.emailAddress,
+                                controller: cubit.emailController,
+                                errorText: 'برجاء إدخال البريد الإلكتروني',
+                              ),
+                              SizedBox(
+                                height: rhight(context) / 60,
+                              ),
+                              MyFormField(
+                                hint: 'كلمة المرور',
+                                iconRoute: 'assets/icons/padlock (1).png',
+                                inputType: TextInputType.visiblePassword,
+                                isSecure: true,
+                                controller: cubit.passwordController,
+                                errorText: 'برجاءإدخال  كلمة المرور',
+                              ),
+                              SizedBox(
+                                height: rhight(context) / 70,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  TextButton(
+                                      onPressed: () {
+                                        navigateTo(context,
+                                            const ForgetPasswordScreen());
+                                      },
+                                      child: Text(
+                                        'نسيت كلمة المرور ؟',
+                                        style: AppTextStyle.smallText.copyWith(
+                                            decoration:
+                                                TextDecoration.underline),
+                                      )),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: rhight(context) / 70,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: rwidth(context) / 16),
-                      child: Center(
-                        child: MyButton(
-                            widget: state is LoginLoading
-                                ? const Center(
-                                    child: CircularProgressIndicator(
-                                      color: Colors.white,
-                                    ),
-                                  )
-                                : Text(
-                                    'دخول',
-                                    style: AppTextStyle.head2.copyWith(
-                                        color: Colors.white, fontSize: 18),
-                                  ),
-                            onPressed: () {
-                              if (cubit.loginformKey.currentState!.validate()) {
-                                cubit.login(
-                                    email: cubit.emailController.text,
-                                    password: cubit.passwordController.text);
-                              }
-                            },
-                            width: rwidth(context) / 2.3),
+                      SizedBox(
+                        height: rhight(context) / 70,
                       ),
-                    ),
-                    SizedBox(
-                      height: rhight(context) / 80,
-                    ),
-                    MyTextButton(
-                        text: 'ليس لدي حساب',
-                        clickableText: 'تسجيل جديد',
-                        onPressed: () {
-                          navigateTo(context, const RegisterScreen());
-                        }),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Image(
-                          image:
-                              const AssetImage('assets/images/Group 3125.png'),
-                          height: rhight(context) / 3.3,
-                          fit: BoxFit.cover,
-                        )
-                      ],
-                    )
-                  ],
+                      Padding(
+                        padding: EdgeInsets.only(left: rwidth(context) / 16),
+                        child: Center(
+                          child: MyButton(
+                              widget: state is LoginLoading
+                                  ? const Center(
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                      ),
+                                    )
+                                  : Text(
+                                      'دخول',
+                                      style: AppTextStyle.head2.copyWith(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                              onPressed: () {
+                                if (cubit.loginformKey.currentState!
+                                    .validate()) {
+                                  cubit.login(
+                                      email: cubit.emailController.text,
+                                      password: cubit.passwordController.text);
+                                }
+                              },
+                              width: rwidth(context) / 2.3),
+                        ),
+                      ),
+                      SizedBox(
+                        height: rhight(context) / 80,
+                      ),
+                      MyTextButton(
+                          text: 'ليس لدي حساب',
+                          clickableText: 'تسجيل جديد',
+                          onPressed: () {
+                            navigateTo(context, const RegisterScreen());
+                          }),
+                    ],
+                  ),
                 ),
               ),
             ),

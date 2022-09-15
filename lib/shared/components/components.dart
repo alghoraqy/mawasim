@@ -25,6 +25,39 @@ class Layout extends StatelessWidget {
   }
 }
 
+class ScreenWithImage extends StatelessWidget {
+  final String image;
+  final Widget widget;
+  final Alignment alignment;
+  const ScreenWithImage(
+      {Key? key,
+      required this.image,
+      required this.widget,
+      required this.alignment})
+      : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        image: DecorationImage(
+          image: AssetImage('assets/images/Mask Group 3.png'),
+          alignment: Alignment.bottomLeft,
+        ),
+      ),
+      child: Container(
+        height: rhight(context),
+        width: rwidth(context),
+        decoration: BoxDecoration(
+            color: Colors.transparent,
+            image: DecorationImage(
+                image: AssetImage(image), alignment: alignment)),
+        child: widget,
+      ),
+    );
+  }
+}
+
 // ignore: must_be_immutable
 class MyFormField extends StatelessWidget {
   final String hint;
@@ -59,7 +92,11 @@ class MyFormField extends StatelessWidget {
         },
         obscureText: isSecure ?? false,
         decoration: InputDecoration(
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none),
+          fillColor: AppColors.inputField,
+          filled: true,
           contentPadding: const EdgeInsets.all(10),
           prefixIconConstraints:
               const BoxConstraints(minWidth: 18, minHeight: 18),
@@ -203,7 +240,6 @@ class DuplicateScreen extends StatelessWidget {
   final Widget widget;
   final MyButton button;
   Widget? myTextButton;
-  final Widget underWidget;
   bool? isChangePassword;
 
   DuplicateScreen(
@@ -214,7 +250,6 @@ class DuplicateScreen extends StatelessWidget {
       required this.widget,
       required this.button,
       this.myTextButton,
-      required this.underWidget,
       this.isChangePassword});
 
   @override
@@ -236,7 +271,7 @@ class DuplicateScreen extends StatelessWidget {
               style: AppTextStyle.head2,
             ),
             SizedBox(
-              height: rhight(context) / 5,
+              height: rhight(context) / 6,
             ),
             if (isChangePassword == null)
               Padding(
@@ -276,10 +311,6 @@ class DuplicateScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 5,
-            ),
-            underWidget,
           ],
         ),
       ),
