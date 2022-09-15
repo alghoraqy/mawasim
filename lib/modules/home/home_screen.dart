@@ -64,57 +64,65 @@ class HomeScreen extends StatelessWidget {
                         height: rhight(context) / 12,
                       ),
                       cubit.servicesModel != null
-                          ? Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    ServiceComponent(
-                                        image: 'assets/services/Group 179.png',
-                                        text: 'نظافة مباني',
-                                        onPressed: () {}),
-                                    ServiceComponent(
-                                        image: 'assets/services/Group 180.png',
-                                        text: 'نظافة السيارات',
-                                        onPressed: () {}),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    ServiceComponent(
-                                        image: 'assets/services/Group 175.png',
-                                        text: 'تأجير حاويات',
-                                        onPressed: () {}),
-                                    ServiceComponent(
-                                        image: 'assets/services/Group 181.png',
-                                        text: 'إيجار وايتات',
-                                        onPressed: () {}),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    ServiceComponent(
-                                        image: 'assets/services/Group 2182.png',
-                                        text: 'خدمات صيانة',
-                                        onPressed: () {}),
-                                    ServiceComponent(
-                                        image: 'assets/services/Group 2183.png',
-                                        text: 'خدمات حاويات',
-                                        onPressed: () {}),
-                                  ],
-                                ),
-                              ],
+                          ? SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      ServiceComponent(
+                                          image:
+                                              'assets/services/Group 179.png',
+                                          text: 'نظافة مباني',
+                                          onPressed: () {}),
+                                      ServiceComponent(
+                                          image:
+                                              'assets/services/Group 180.png',
+                                          text: 'نظافة السيارات',
+                                          onPressed: () {}),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      ServiceComponent(
+                                          image:
+                                              'assets/services/Group 175.png',
+                                          text: 'تأجير حاويات',
+                                          onPressed: () {}),
+                                      ServiceComponent(
+                                          image:
+                                              'assets/services/Group 181.png',
+                                          text: 'إيجار وايتات',
+                                          onPressed: () {}),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      ServiceComponent(
+                                          image:
+                                              'assets/services/Group 2182.png',
+                                          text: 'خدمات صيانة',
+                                          onPressed: () {}),
+                                      ServiceComponent(
+                                          image:
+                                              'assets/services/Group 2183.png',
+                                          text: 'خدمات حاويات',
+                                          onPressed: () {}),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             )
                           : Expanded(
                               child: Center(

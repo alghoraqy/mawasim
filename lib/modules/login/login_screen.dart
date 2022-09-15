@@ -29,7 +29,10 @@ class LoginScreen extends StatelessWidget {
                     value: state.loginModel.activateAccountData.token)
                 .then((value) {
               AppConstances.token = state.loginModel.activateAccountData.token;
-              navigateTo(context, const HomeScreen());
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) {
+                return const HomeScreen();
+              }));
             });
           } else {
             if (state is LoginError) {

@@ -36,7 +36,10 @@ class ConfirmCodeScreen extends StatelessWidget {
             AppConstances.token =
                 state.activateAccountModel.activateAccountData.token;
 
-            navigateTo(context, const HomeScreen());
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+              return const HomeScreen();
+            }));
           });
         } else {
           if (state is ActivateAccountError) {
