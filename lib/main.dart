@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:task/bloc/login_bloc/login_cubit.dart';
@@ -11,6 +12,9 @@ import 'package:task/shared/constances.dart/constances.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
   await CachHelper.init();
   DioHelper.init();
@@ -29,7 +33,6 @@ void main() async {
   ));
 }
 
-//////computer
 class MyApp extends StatelessWidget {
   final Widget? widget;
   const MyApp({Key? key, required this.widget}) : super(key: key);
